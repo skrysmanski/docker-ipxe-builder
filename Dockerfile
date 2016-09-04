@@ -1,4 +1,4 @@
-FROM ipxe-build-base
+FROM skrysmanski/ipxe-builder-base
 
 COPY embed.ipxe ${ARTIFACTS_DIR}/
 
