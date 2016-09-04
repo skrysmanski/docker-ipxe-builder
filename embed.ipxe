@@ -1,0 +1,10 @@
+#!ipxe
+
+# Retry DHCP until a boot image is available.
+:retry
+ifconf -c dhcp && isset ${filename} || goto retry
+
+# Boot boot file or drop into a shell in case of
+# an error.
+chain ${filename} || shell
+
