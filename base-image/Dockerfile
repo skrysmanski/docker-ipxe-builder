@@ -1,7 +1,7 @@
-# Run with: docker run -v undionly-build:/undionly ipxe-build
-FROM ubuntu
+FROM alpine
 
-RUN apt-get update && apt-get install -y git gcc make liblzma-dev
+RUN apk add --update gcc git make perl musl-dev xz-dev \
+ && rm -rf /var/cache/apk/*
 
 # Check out iPXE
 # See: http://ipxe.org/download
